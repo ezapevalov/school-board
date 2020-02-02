@@ -1,0 +1,18 @@
+{
+    "name": "ezapevalov/school-board",
+    "description": "Basic school board. Calculates student grades.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Eugene Zapevalov",
+            "email": "ezapevalov@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "colshrapnel/safemysql": "^1.0",
+        "components/jquery": "^2.2",
+        "components/jqueryui": "^1.11",
+        "twbs/bootstrap": "^3.3"
+    }
+}
