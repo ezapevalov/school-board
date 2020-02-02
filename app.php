@@ -29,14 +29,19 @@ class App {
     }
 
     private function routes($path) {
-        if ( isset($path[1]) && !empty($path[1]) ) {
+        if ( !empty($path[1]) ) {
             $this->controller = ucfirst($path[1]);
 
-            if ( isset($path[2]) && !empty($path[2]) ) {
-                $this->action = $path[2];
+            if ( !empty($path[2]) ) {
+                if( is_numeric($path[2])) {
+                    $this->action = 'index';
+                    $this->id = $path[2];
+                } else {
+                    $this->action = $path[2];
 
-                if ( isset($path[3]) && !empty($path[3]) ) {
-                    $this->id = $path[3];
+                    if ( !empty($path[3]) ) {
+                        $this->id = $path[3];
+                    }
                 }
             }
         }
@@ -75,7 +80,6 @@ class App {
         $response = ob_get_contents();
         ob_end_clean();
 
-        header('Content-Type: text/html; charset=utf-8');
         echo $response; exit;
     }
 }

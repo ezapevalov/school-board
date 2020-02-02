@@ -1,12 +1,11 @@
 <?php
 
-class Controller_Index extends Controller_Base {
-    public function __construct() {
-        parent::__construct();
-    }
-
+class Controller_Index {
     public function action_index() {
-        $this->scripts[] = '/Assets/js/index/index.js';
-        $this->render('index/index');
+        header('Content-Type: application/json');
+
+        echo json_encode([
+            'hint' => 'This is a default entry point. Try /students/[id]'
+        ], JSON_UNESCAPED_SLASHES, JSON_PRETTY_PRINT);
     }
 }
