@@ -10,6 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "colshrapnel/safemysql": "^1.0"
+        "colshrapnel/safemysql": "^1.0",
+        "spatie/array-to-xml": "dev-master"
     }
 }
