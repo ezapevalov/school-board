@@ -1,4 +1,7 @@
-CREATE TABLE `school-board`.`students` (
+CREATE DATABASE IF NOT EXISTS `school-board` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `school-board`;
+
+CREATE TABLE `students` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
   `board_id` INT(11) UNSIGNED NOT NULL ,
@@ -8,7 +11,7 @@ CREATE TABLE `school-board`.`students` (
 )
 ENGINE = InnoDB;
 
-CREATE TABLE `school-board`.`boards` (
+CREATE TABLE `boards` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 
@@ -21,7 +24,7 @@ ADD CONSTRAINT `students_board_id_fk` FOREIGN KEY (`board_id`)
 REFERENCES `boards`(`id`)
 ON DELETE RESTRICT ON UPDATE CASCADE;
 
-CREATE TABLE `school-board`.`grades` (
+CREATE TABLE `grades` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `student_id` INT(11) UNSIGNED NOT NULL ,
   `grade` TINYINT(2) UNSIGNED NOT NULL ,
