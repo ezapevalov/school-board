@@ -35,3 +35,33 @@ ALTER TABLE `grades`
 ADD CONSTRAINT `grades_student_id_fk` FOREIGN KEY (`student_id`)
 REFERENCES `students`(`id`)
 ON DELETE CASCADE ON UPDATE CASCADE;
+
+INSERT INTO `boards` (`id`, `name`) VALUES ('1', 'CSM'), ('2', 'CSMB');
+
+INSERT INTO `students` (`id`, `name`, `board_id`) VALUES
+  ('1', 'John Smith',  '1'),
+  ('2', 'Jane Walker', '1'),
+  ('3', 'Jack Brigs',  '1'),
+  ('4', 'Max Cage',    '2'),
+  ('5', 'Ann Stewart', '2'),
+  ('6', 'Terry Haze',  '2');
+
+INSERT INTO `grades` (`id`, `student_id`, `grade`) VALUES
+(NULL, '1', '9'),
+(NULL, '1', '8'),
+(NULL, '1', '5'),
+(NULL, '2', '7'),
+(NULL, '2', '6'),
+(NULL, '3', '7'),
+(NULL, '3', '5'),
+(NULL, '3', '9'),
+(NULL, '4', '7'),
+(NULL, '4', '7'),
+(NULL, '4', '9'),
+(NULL, '5', '8'),
+(NULL, '5', '8'),
+(NULL, '5', '7'),
+(NULL, '6', '9'),
+(NULL, '6', '10'),
+(NULL, '6', '9'),
+(NULL, '6', '8');
